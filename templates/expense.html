@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Web Page</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static' , filename='expense.png') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 100px;
+        }
+
+        .first-div {
+            border: 1px solid black;
+            width: 300px;
+            text-align: center;
+            padding: 6px;
+            border-radius: 15px;
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        }
+        .first-div:hover {
+            transform: scale(1.08);
+            box-shadow: 0px 10px 25px;
+        }
+        .p-tag {
+            color: rgb(103, 113, 103);
+            font-weight: bolder;
+            display: inline-block;
+            background-color: white;
+            padding: 2px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: block;
+            width: fit-content;
+
+
+            animation: typing 3s steps(20) forwards, blink 0.5s infinite;
+        }
+
+        @keyframes typing {
+            from {
+                clip-path: inset(0 100% 0 0);
+            }
+
+            to {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .h3-head {
+            display: inline-block;
+            margin-bottom: 10px;
+            background-color: rgb(229, 255, 0);
+            padding: 4px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: lightblue;
+            padding: 6px;
+            font-size: large;
+            font-weight: bolder;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0px 10px 25px;
+        }
+
+        .container1 {
+            display: flex;
+            gap: 180px;
+            margin-left: 40px;
+        }
+        .sec-div {
+            border: 1px solid black;
+            width: 300px;
+            text-align: center;
+            padding: 6px;
+            border-radius: 15px;
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+        }
+        .sec-div:hover {
+            transform: scale(1.08);
+            box-shadow: 0px 10px 25px;
+        }
+        .container2 {
+            display: flex;
+            gap: 180px;
+            margin-left: 40px;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container1">
+        <div class="first-div">
+            <h3 class="h3-head">Add Expense</h3>
+            <p class="p-tag">You are add expense after click button given is a below.</p>
+            <a href=" {{ url_for("add_expense") }} ">
+                <button class="btn">Add</button>
+            </a>
+        </div>
+
+        <div class="first-div">
+            <h3 class="h3-head">Delete Expense</h3>
+            <p class="p-tag">You are delete expense after click button given is a below.</p>
+            <button class="btn">Delete</button>
+        </div>
+
+        <div class="first-div">
+            <h3 class="h3-head">Show Expense</h3>
+            <p class="p-tag">You are show expense after click button given is a below.</p>
+            <a href=" {{ url_for("show") }} ">
+                <button class="btn">Show</button>
+            </a>
+        </div>
+
+    </section>
+
+    <section class="container2">
+        <div class="sec-div">
+            <h3 class="h3-head">Weekly Expense</h3>
+            <p class="p-tag">You are show weekly expense after click button given is a below.</p>
+            <button class="btn">Show</button>
+        </div>
+
+        <div class="sec-div">
+            <h3 class="h3-head">Monthly Expense</h3>
+            <p class="p-tag">You are show monthly expense after click button given is a below.</p>
+            <button class="btn">Show</button>
+        </div>
+
+        <div class="sec-div">
+            <h3 class="h3-head">Yearly Expense</h3>
+            <p class="p-tag">You are show yearly expense after click button given is a below.</p>
+            <button class="btn">Show</button>
+        </div>
+    </section>
+</body>
+
+</html>
