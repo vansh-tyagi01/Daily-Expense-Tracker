@@ -1,2 +1,1 @@
 ﻿# Daily-Expense-Tracker
-Hey Everyone how are you...My name is vansh and I built this project.
